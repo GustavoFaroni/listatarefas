@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Tarefa</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .centralizar{
+            margin-top: 40px;
+        }
+
+
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <div>
+            <h1><I>Lista de tarefas</I></h1>
+        </div>
+    </header>
+    <nav>
+        <div><a class="botao" href="index.php">Tela Inicial</a></div>
+    </nav>
+    <main>
+        <div class="centralizar">
+            <div class="form-container">
+                <h2>Cadastrar Tarefa</h2>
+                <form action="enviar.php" method="post">
+                    <!-- Nome da Tarefa -->
+                    <div class="form-group">
+                        <label for="nome">Nome da Tarefa</label>
+                        <input type="text" id="nome" name="nome" required>
+                    </div>
+
+                    <!-- Custo -->
+                    <div class="form-group">
+                        <label for="valor">Valor (R$)</label>
+                        <input type="number" id="valor" name="valor" step="0.01" required>
+                    </div>
+
+                    <!-- Prazo -->
+                    <div class="form-group">
+                        <label for="prazo">Data Limite</label>
+                        <input type="date" id="prazo" name="prazo" required>
+                    </div>
+
+                    <!-- Enviar -->
+                    <div class="form-group">
+                        <button type="submit">Criar Tarefa</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
