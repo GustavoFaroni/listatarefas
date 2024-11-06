@@ -4,6 +4,8 @@ require_once 'config.php';
     $sql = "SELECT * FROM tarefas ORDER BY ordem ASC";
     $result = $conexao->query($sql);
 
+
+    if ($result && $result->num_rows > 0) {
     $first_row = $result->fetch_assoc(); 
     $first_id = $first_row["id"];
     $result->data_seek(0); // Reiniciar ponteiro do result set
@@ -11,6 +13,10 @@ require_once 'config.php';
     $result->data_seek($result->num_rows -1);
     $last_id = $result->fetch_assoc()["id"]; 
     $result->data_seek(0); // Reiniciar ponteiro do result set
+} else {
+    $first_id = null; 
+    $last_id = null;
+}
 
 
 
