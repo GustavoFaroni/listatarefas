@@ -17,7 +17,7 @@ Primeiro, clone este repositório para o seu diretório `htdocs` no XAMPP.
 
 
 cd /c/xampp/htdocs
-git clone https://github.com/SEU_USUARIO/controle-tarefas.git
+git clone https://github.com/GustavoFaroni/listatarefas.git
 cd controle-tarefas
 
 
@@ -27,20 +27,18 @@ Abra o painel de controle do XAMPP e inicie o Apache e o MySQL.
 
 Abra o phpMyAdmin indo para http://localhost/phpmyadmin no seu navegador.
 
-Crie um novo banco de dados chamado tarefas_db.
+Crie um novo banco de dados chamado lista_tarefas.
 
-No banco de dados tarefas_db, crie a tabela tarefas com a seguinte estrutura:
+No banco de dados lista_tarefas, crie a tabela tarefas com a seguinte estrutura:
 
 
 CREATE TABLE `tarefas` (
-  `id` INT(11) NOT NULL AUTO_INCREMENT,
-  `nome` VARCHAR(255) NOT NULL,
-  `custo` INT(11) NOT NULL,
-  `prazo` DATE NOT NULL,
-  `ordem` INT(11) UNSIGNED NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `ordem` (`ordem`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `id` int(11) NOT NULL,
+  `nome` varchar(100) NOT NULL,
+  `custo` int(11) NOT NULL,
+  `prazo` date NOT NULL,
+  `ordem` int(10) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
 ### Passo 3: Configurar a Aplicação
